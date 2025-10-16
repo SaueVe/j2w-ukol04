@@ -1,10 +1,5 @@
 package cz.czechitas.java2webapps.ukol3.entity;
 
-import java.util.Objects;
-
-/**
- * Entita obsahující údaje zobrazené na vizitce.
- */
 public class Vizitka {
     private String jmeno;
     private String firma;
@@ -18,10 +13,10 @@ public class Vizitka {
     }
 
     public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web) {
-        this.jmeno = Objects.requireNonNull(jmeno);
-        this.firma = Objects.requireNonNull(firma);
-        this.ulice = Objects.requireNonNull(ulice);
-        this.obecPsc = Objects.requireNonNull(obecPsc);
+        this.jmeno = jmeno;
+        this.firma = firma;
+        this.ulice = ulice;
+        this.obecPsc = obecPsc;
         this.email = email;
         this.telefon = telefon;
         this.web = web;
@@ -31,8 +26,8 @@ public class Vizitka {
         return jmeno;
     }
 
-    public void setJmeno(String jmeno) {
-        this.jmeno = Objects.requireNonNull(jmeno);
+    public void setJmeno(String nazev) {
+        this.jmeno = nazev;
     }
 
     public String getFirma() {
@@ -40,7 +35,7 @@ public class Vizitka {
     }
 
     public void setFirma(String firma) {
-        this.firma = Objects.requireNonNull(firma);
+        this.firma = firma;
     }
 
     public String getUlice() {
@@ -48,7 +43,7 @@ public class Vizitka {
     }
 
     public void setUlice(String ulice) {
-        this.ulice = Objects.requireNonNull(ulice);
+        this.ulice = ulice;
     }
 
     public String getObecPsc() {
@@ -56,7 +51,11 @@ public class Vizitka {
     }
 
     public void setObecPsc(String obecPsc) {
-        this.obecPsc = Objects.requireNonNull(obecPsc);
+        this.obecPsc = obecPsc;
+    }
+
+    public String getCelaAdresa() {
+        return ulice + ", " + obecPsc;
     }
 
     public String getEmail() {
@@ -81,9 +80,5 @@ public class Vizitka {
 
     public void setWeb(String web) {
         this.web = web;
-    }
-
-    public String getCelaAdresa() {
-        return ulice + ", " + obecPsc;
     }
 }
